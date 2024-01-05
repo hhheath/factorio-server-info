@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  factorio:
+    image: factoriotools/factorio:stable
+    container_name: factorio
+    ports:
+      - "34197:34197/udp"
+    volumes:
+      - ./factorio-data:/factorio
+      - ./mods:/factorio/mods
+    environment:
+      - SAVE_NAME=ftb-space
+      - USERNAME=cloolis
+      - TOKEN=<in-factorio-bitwarden-notes>
+      - UPDATE_MODS_ON_START=true
+      - LOAD_LATEST_SAVE=false
